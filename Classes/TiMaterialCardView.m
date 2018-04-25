@@ -9,15 +9,17 @@
 
 @implementation TiMaterialCardView
 
--(Card *)cardView
+- (Card *)cardView
 {
-    if(_cardView == nil) {
-        _cardView = [[Card alloc]initWithFrame:[super bounds]];
+    if (_cardView == nil) {
+        _cardView = [[Card alloc] initWithFrame:self.bounds];
+        [_cardView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
+        [self addSubview:_cardView];
     }
-    [self addSubview:_cardView];
-    
+
     return _cardView;
 }
+
 - (void)frameSizeChanged:(CGRect)frame bounds:(CGRect)bounds
 {
     [TiUtils setView:[self cardView] positionRect:bounds];
