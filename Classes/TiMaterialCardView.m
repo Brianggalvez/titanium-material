@@ -12,8 +12,7 @@
 -(Card *)cardView
 {
     if(_cardView == nil) {
-        _cardView = [[Card alloc]initWithFrame:self.bounds];
-
+        _cardView = [[Card alloc]initWithFrame:[super bounds]];
     }
     [self addSubview:_cardView];
     
